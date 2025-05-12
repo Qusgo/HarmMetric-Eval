@@ -1,10 +1,14 @@
-import openai
 import time
 
-# please replace the API with yours
-API_SECRET_KEY= "sk-B6VDiHOiaet5p57OBaAb34AaBfBc4c509cA9Ee76442a3095"
-BASE_URL = "https://api.ai-gaochao.cn/v1"
-gpt_client = openai.OpenAI(api_key=API_SECRET_KEY, base_url=BASE_URL)
+try:
+    import openai
+    # please replace the API with yours
+    API_SECRET_KEY = ""
+    BASE_URL = ""
+    gpt_client = openai.OpenAI(api_key=API_SECRET_KEY, base_url=BASE_URL)
+except:
+    print("openai not found")
+    gpt_client = None
 
 
 def gpt4_res(prompt, direct_input=False):
